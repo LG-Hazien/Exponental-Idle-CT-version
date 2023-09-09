@@ -16,7 +16,6 @@ var x = BigNumber.ZERO;
 
 var init = () => {
     ft = theory.createCurrency("f", "f");
-    ft.value = BigNumber.ONE //INTIAL VALUE
 
     ///////////////////
     // Regular Upgrades
@@ -37,7 +36,8 @@ var init = () => {
 var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
 
-    ft.value *= x / 12;
+    ft.value *= (x / 12) + BigNumber.ONE;
 }
 
 init();
+ft.value = BigNumber.ONE //INTIAL VALUE
