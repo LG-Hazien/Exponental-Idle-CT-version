@@ -16,6 +16,7 @@ const x = BigNumber.ZERO;
 
 var init = () => {
     ft = theory.createCurrency("f", "f");
+    ft.value = BigNumber.ONE //INTIAL VALUE
 
     ///////////////////
     // Regular Upgrades
@@ -23,7 +24,7 @@ var init = () => {
     // x1
     {
         let getDesc = () => "x=" + x;
-        let getInfo = () => "Each level increases 1 x."
+        let getInfo = () => "Each level increases 0.1 x."
         x1 = theory.createUpgrade(0, ft, new FreeCost());
         x1.getDescription = (_) => Utils.getMath(getDesc());
         x1.getInfo = (amount) => getInfo();
@@ -31,6 +32,13 @@ var init = () => {
             x += 0.1 
         };
     }
+}
+
+var tick = (elapsedTime, multiplier) => {
+    let dt = BigNumber.from(elapsedTime * multiplier);
+
+    ft.value *= x / 12;
+    currency2.value += BigNumber.from("0.03333333333333")
 }
 
 init();
