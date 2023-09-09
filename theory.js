@@ -35,7 +35,7 @@ var init = () => {
     {
         let getDesc = () => "y=" + y;
         let getInfo = () => "Each level increases 4 x."
-        x1 = theory.createUpgrade(0, ft, new ExponentialCost(1e9, 1.2));
+        x1 = theory.createUpgrade(1, ft, new ExponentialCost(1e9, 1.2));
         x1.getDescription = (_) => Utils.getMath(getDesc());
         x1.getInfo = (amount) => getInfo();
         x1.bought = (amount) => { 
