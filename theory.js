@@ -22,12 +22,13 @@ var init = () => {
 
     // x1
     {
-        let getDesc = (level) => "x=" + x;
+        let getDesc = () => "x=" + x;
+        let getInfo = () => "Each level increases 1 x."
         x1 = theory.createUpgrade(0, ft, new FreeCost());
-        x1.getDescription = (_) => Utils.getMath(getDesc(s1.level));
-        x1.getInfo = (amount) => Utils.getMathTo(getInfo(s1.level), getInfo(s1.level + amount));
+        x1.getDescription = (_) => Utils.getMath(getDesc());
+        x1.getInfo = (amount) => getInfo();
         x1.bought = (amount) => { 
-            x += 0.1  
+            x += 0.1 
         };
     }
 }
