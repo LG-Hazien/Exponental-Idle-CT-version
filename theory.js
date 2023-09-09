@@ -28,7 +28,18 @@ var init = () => {
         x1.getDescription = (_) => Utils.getMath(getDesc());
         x1.getInfo = (amount) => getInfo();
         x1.bought = (amount) => { 
-            x += 0.1 
+            x += 0.1
+        };
+    }
+    // y
+    {
+        let getDesc = () => "y=" + y;
+        let getInfo = () => "Each level increases 4 x."
+        x1 = theory.createUpgrade(0, ft, new ExponentialCost(1e9, 1.2));
+        x1.getDescription = (_) => Utils.getMath(getDesc());
+        x1.getInfo = (amount) => getInfo();
+        x1.bought = (amount) => { 
+            x += 4
         };
     }
 }
