@@ -38,7 +38,6 @@ var tick = (elapsedTime, multiplier) => {
     let dt = BigNumber.from(elapsedTime * multiplier);
 
     ft.value *= x / 12;
-    currency2.value += BigNumber.from("0.03333333333333")
 }
 
 init();
