@@ -12,7 +12,7 @@ var version = "1.0.0";
 
 var ft;
 
-const x = BigNumber.ZERO;
+var x = BigNumber.ZERO;
 
 var init = () => {
     ft = theory.createCurrency("f", "f");
