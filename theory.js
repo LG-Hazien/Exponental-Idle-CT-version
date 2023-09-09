@@ -11,3 +11,9 @@ var authors = "LG-Hazien";
 var version = "1.0.0";
 
 var ft;
+
+var init = () => {
+    ft = theory.createCurrency("f", "f");
+}
+
+init();
